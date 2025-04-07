@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import AdminStats from "./components/AdminStats";
 
 function App() {
+  const userId = "frontendUser";
+  const [refreshCart, setRefreshCart] = useState(0);
+
+  const triggerRefresh = () => setRefreshCart((prev) => prev + 1);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>🏪 Ecommerce Store</h1>
+      <ProductList userId={userId} onAddToCart={triggerRefresh} />
+      <Cart userId={userId} refreshTrigger={refreshCart} />
+      <Checkout userId={userId} onCheckout={triggerRefresh} />
+      <hr />
+      <AdminStats />
     </div>
   );
 }
