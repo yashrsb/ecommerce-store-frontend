@@ -51,3 +51,10 @@ npm start
 ```
 
 Open http://localhost:3000 in your browser to see the app running.
+
+## 📷 Screenshot
+
+> Below is a sample view of the E-Commerce page:
+
+![E-Commerce Screenshot 1](../ecommerce-store-frontend/src/assets/E-commerce-page.png)
+---
